@@ -16,9 +16,8 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.abt.imageloader.R;
 import com.abt.loader.ImageLoader;
-import com.abt.loader.MyUtils;
+import com.abt.loader.LoaderUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,10 +86,10 @@ public class MainActivity extends Activity implements OnScrollListener {
         for (String url : imageUrls) {
             mUrList.add(url);
         }
-        int screenWidth = MyUtils.getScreenMetrics(this).widthPixels;
-        int space = (int)MyUtils.dp2px(this, 20f);
+        int screenWidth = LoaderUtil.getScreenMetrics(this).widthPixels;
+        int space = (int) LoaderUtil.dp2px(this, 20f);
         mImageWidth = (screenWidth - space) / 3;
-        mIsWifi = MyUtils.isWifi(this);
+        mIsWifi = LoaderUtil.isWifi(this);
         if (mIsWifi) {
             mCanGetBitmapFromNetWork = true;
         }

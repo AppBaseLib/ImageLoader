@@ -8,6 +8,7 @@ import android.util.Log;
 import java.io.FileDescriptor;
 
 public class ImageResizer {
+
     private static final String TAG = "ImageResizer";
 
     public ImageResizer() {

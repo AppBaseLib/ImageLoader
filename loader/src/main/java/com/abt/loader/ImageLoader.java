@@ -272,8 +272,8 @@ public class ImageLoader {
             if (urlConnection != null) {
                 urlConnection.disconnect();
             }
-            MyUtils.close(out);
-            MyUtils.close(in);
+            LoaderUtil.close(out);
+            LoaderUtil.close(in);
         }
         return false;
     }
@@ -295,7 +295,7 @@ public class ImageLoader {
             if (urlConnection != null) {
                 urlConnection.disconnect();
             }
-            MyUtils.close(in);
+            LoaderUtil.close(in);
         }
         return bitmap;
     }

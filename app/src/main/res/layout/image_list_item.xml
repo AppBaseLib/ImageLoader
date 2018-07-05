@@ -5,7 +5,7 @@
     android:gravity="center"
     android:orientation="vertical" >
 
-    <com.ryg.chapter_12.ui.SquareImageView
+    <com.abt.loader_sample.SquareImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

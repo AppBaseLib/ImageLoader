@@ -10,8 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.abt.imageloader.R;
-
 import java.util.ArrayList;
 
 /**
