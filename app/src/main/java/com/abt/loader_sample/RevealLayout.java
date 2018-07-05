@@ -23,7 +23,6 @@ public class RevealLayout extends LinearLayout implements Runnable {
     private static final boolean DEBUG = true;
 
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-
     private int mTargetWidth;
     private int mTargetHeight;
     private int mMinBetweenWidthAndHeight;
@@ -38,7 +37,6 @@ public class RevealLayout extends LinearLayout implements Runnable {
     private boolean mShouldDoAnimation = false;
     private boolean mIsPressed = false;
     private int INVALIDATE_DURATION = 40;
-
     private View mTouchTarget;
     private DispatchUpTouchEventRunnable mDispatchUpTouchEventRunnable = new DispatchUpTouchEventRunnable();
 
@@ -142,7 +140,6 @@ public class RevealLayout extends LinearLayout implements Runnable {
             mIsPressed = false;
             postInvalidateDelayed(INVALIDATE_DURATION);
         }
-
         return super.dispatchTouchEvent(event);
     }
 
@@ -155,7 +152,6 @@ public class RevealLayout extends LinearLayout implements Runnable {
                 break;
             }
         }
-
         return target;
     }
 
