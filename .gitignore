@@ -9,3 +9,5 @@
 .externalNativeBuild
 /build/
 /.idea/
+loader/libs/
+loader/src/main/res/drawable/
