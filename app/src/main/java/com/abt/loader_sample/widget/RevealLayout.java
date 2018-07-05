@@ -1,4 +1,4 @@
-package com.abt.loader_sample;
+package com.abt.loader_sample.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.abt.loader_sample.R;
 
 import java.util.ArrayList;
 

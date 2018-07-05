@@ -1,4 +1,4 @@
-package com.abt.loader_sample;
+package com.abt.loader_sample.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
