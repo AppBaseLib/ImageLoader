@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -107,11 +108,12 @@ public class MainActivity extends Activity implements OnScrollListener {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+            Log.d(TAG, "getView, position="+position);
             ViewHolder holder = null;
             if (convertView == null) {
                 convertView = mInflater.inflate(R.layout.image_list_item,parent, false);
                 holder = new ViewHolder();
-                holder.imageView = (ImageView) convertView.findViewById(R.id.image);
+                holder.imageView = convertView.findViewById(R.id.image);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
@@ -122,9 +124,11 @@ public class MainActivity extends Activity implements OnScrollListener {
             if (!uri.equals(tag)) {
                 imageView.setImageDrawable(mDefaultBitmapDrawable);
             }
-            if (mIsGridViewIdle && mCanGetBitmapFromNetWork) {
+            //if (mIsGridViewIdle && mCanGetBitmapFromNetWork) {
+            if (mCanGetBitmapFromNetWork) {
                 imageView.setTag(uri);
-                mImageLoader.bindBitmap(uri, imageView, mImageWidth, mImageWidth);
+                //mImageLoader.bindBitmap(uri, imageView, mImageWidth, mImageWidth);
+                mImageLoader.bindBitmap(uri, imageView, mImageWidth, mImageWidth, mIsGridViewIdle);
             }
             return convertView;
         }

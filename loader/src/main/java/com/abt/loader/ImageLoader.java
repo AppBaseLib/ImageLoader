@@ -137,7 +137,12 @@ public class ImageLoader {
     }
 
     public void bindBitmap(final String uri, final ImageView imageView,
-            final int reqWidth, final int reqHeight) {
+                           final int reqWidth, final int reqHeight) {
+        bindBitmap(uri, imageView, reqWidth, reqHeight, true);
+    }
+
+    public void bindBitmap(final String uri, final ImageView imageView,
+            final int reqWidth, final int reqHeight, boolean idel) {
         imageView.setTag(TAG_KEY_URI, uri);
         Bitmap bitmap = loadBitmapFromMemCache(uri);
         if (bitmap != null) {
@@ -145,8 +150,9 @@ public class ImageLoader {
             return;
         }
 
-        Runnable loadBitmapTask = new Runnable() {
+        if (!idel) return; // 如果list正在滚动，则暂时不去网络加载数据
 
+        Runnable loadBitmapTask = new Runnable() {
             @Override
             public void run() {
                 Bitmap bitmap = loadBitmap(uri, reqWidth, reqHeight);
